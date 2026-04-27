@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Үр дүн</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f7fa;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .stat {
+            flex: 1;
+            margin: 10px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+        .back-btn:hover {
+            background: #5a6268;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+        .download-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📊 Шалгалтын үр дүн</h1>
+
+    <div class="card stats">
+        <div class="stat">
+            <h3>Дундаж</h3>
+            <p>{{ average }}</p>
+        </div>
+        <div class="stat">
+            <h3>Хамгийн их</h3>
+            <p>{{ max_score }}</p>
+        </div>
+        <div class="stat">
+            <h3>Хамгийн бага</h3>
+            <p>{{ min_score }}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Хамгийн хэцүү: {{ hardest }}</h3>
+        <h3>Хамгийн амар: {{ easiest }}</h3>
+    </div>
+
+    <div class="card">
+        <h3>📈 График</h3>
+        <img src="data:image/png;base64,{{ graph }}">
+    </div>
+
+    <div class="card">
+        <h3>📋 Хүснэгт</h3>
+        {{ tables | safe }}
+    </div>
+    <a href="/" class="back-btn">← Нүүр хуудас руу буцах</a>
+    <a href="/download" class="download-btn">📥 Excel татах</a>
+
+</div>
+
+</body>
+</html>

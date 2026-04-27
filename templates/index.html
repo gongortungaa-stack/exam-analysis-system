@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Шалгалтын анализийн систем</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 700px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .upload-box {
+            border: 2px dashed #3b82f6;
+            padding: 30px;
+            border-radius: 12px;
+            background: #eff6ff;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Шалгалтын анализийн систем</h1>
+    <p>Excel файл оруулж, сурагчдын дүн болон даалгаврын анализ гаргана.</p>
+
+    <div class="upload-box">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <h3>Excel файл сонгох</h3>
+            <input type="file" name="file" accept=".xlsx">
+            <br>
+            <button type="submit">Анализ хийх</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
